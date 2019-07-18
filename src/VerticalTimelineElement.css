@@ -245,6 +245,13 @@
     right: 124%;
     text-align: right;
   }
+
+  .vertical-timeline--two-columns .vertical-timeline-element:nth-child(odd):not(.vertical-timeline-element--right) .vertical-timeline-element-content .vertical-timeline-element-date,
+  .vertical-timeline--two-columns .vertical-timeline-element.vertical-timeline-element--left .vertical-timeline-element-content .vertical-timeline-element-date {
+    right: auto;
+    right: 124%;
+    text-align: left;
+  }
 }
 
 /* Box animations */

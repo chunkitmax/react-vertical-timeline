@@ -22,10 +22,12 @@ class VerticalTimelineElement extends Component {
       children,
       icon,
       iconStyle,
+      iconClassName,
       iconOnClick,
       date,
       position,
       style,
+      contentClassName,
       className,
       visibilitySensorProps,
     } = this.props;
@@ -50,15 +52,15 @@ class VerticalTimelineElement extends Component {
             <span // eslint-disable-line jsx-a11y/no-static-element-interactions
               style={iconStyle}
               onClick={iconOnClick}
-              className={`vertical-timeline-element-icon ${
+              className={`${iconClassName} vertical-timeline-element-icon ${
                 visible ? 'bounce-in' : 'is-hidden'
               }`}
             >
               {icon}
             </span>
             <div
-              className={`vertical-timeline-element-content ${
-                visible ? 'bounce-in' : 'is-hidden'
+              className={`${contentClassName} vertical-timeline-element-content ${
+                visible && children !== '' ? 'bounce-in' : 'is-hidden'
               }`}
             >
               {children}
@@ -80,6 +82,8 @@ VerticalTimelineElement.propTypes = {
   className: PropTypes.string,
   icon: PropTypes.element,
   iconStyle: PropTypes.shape({}),
+  iconClassName: PropTypes.string,
+  contentClassName: PropTypes.string,
   iconOnClick: PropTypes.func,
   style: PropTypes.shape({}),
   date: PropTypes.node,
@@ -93,6 +97,8 @@ VerticalTimelineElement.defaultProps = {
   className: '',
   icon: null,
   iconStyle: null,
+  iconClassName: '',
+  contentClassName: '',
   style: null,
   date: '',
   position: '',
