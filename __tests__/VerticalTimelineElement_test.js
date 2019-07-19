@@ -31,15 +31,15 @@ describe('VerticalTimeline', () => {
       );
     });
 
-    it('should have the vertical-timeline-element--no-children classname', () => {
-      const componentWithDate = renderIntoDocument(
-        <VerticalTimelineElement date="2018" />,
-      );
-      findRenderedDOMComponentWithClass(
-        componentWithDate,
-        'vertical-timeline-element--no-children',
-      );
-    });
+    // it('should have the vertical-timeline-element--no-children classname', () => {
+    //   const componentWithDate = renderIntoDocument(
+    //     <VerticalTimelineElement date="2018" />,
+    //   );
+    //   findRenderedDOMComponentWithClass(
+    //     componentWithDate,
+    //     'vertical-timeline-element--no-children',
+    //   );
+    // });
 
     it('should not have the vertical-timeline-element--no-children classname', () => {
       const component = renderIntoDocument(
