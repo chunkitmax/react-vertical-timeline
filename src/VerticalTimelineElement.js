@@ -58,14 +58,24 @@ class VerticalTimelineElement extends Component {
             >
               {icon}
             </span>
-            <div
-              className={`${contentClassName} vertical-timeline-element-content ${
-                visible && children !== '' ? 'bounce-in' : 'is-hidden'
-              }`}
-            >
-              {children}
-              <span className="vertical-timeline-element-date">{date}</span>
-            </div>
+            {children === '' ? (
+              <div
+                className={`vertical-timeline-element-content vertical-timeline-element--no-children
+                  ${visible && children === '' ? 'bounce-in' : 'is-hidden'}
+                `}
+              >
+                <span className="vertical-timeline-element-date">{date}</span>
+              </div>
+            ) : (
+              <div
+                className={`${contentClassName} vertical-timeline-element-content ${
+                  visible && children !== '' ? 'bounce-in' : 'is-hidden'
+                }`}
+              >
+                {children}
+                <span className="vertical-timeline-element-date">{date}</span>
+              </div>
+            )}
           </div>
         </VisibilitySensor>
       </div>
